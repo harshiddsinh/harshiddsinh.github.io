@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshiddsinh Vaghela - Software Developer Portfolio</title>
+     <style>
+        /* General styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            overflow-x: hidden;
+            height: 100vh; /* Full height */
+            background: linear-gradient(270deg, #007bff, #28a745, #ffc107, #dc3545);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite; /* Animation for gradient */
+        }
+        .hidden {
+            display: none;
+        }
+        /* Gradient animation */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* Start screen styles */
+        #start-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgba(0, 123, 255, 0.7); /* Semi-transparent background for visibility */
+            color: white;
+            text-align: center;
+        }
+        #start-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        #start-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        /* Section styles */
+        .section {
+            padding: 50px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 800px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideInUp 1s ease-out forwards;
+        }
+        .section h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        .section p {
+            font-size: 1.2rem;
+        }
+        /* Photo styles */
+        .profile-photo {
+            width: 150px; /* Adjust as needed */
+            height: 150px; /* Adjust as needed */
+            border-radius: 50%; /* Circular photo */
+            object-fit: cover; /* Ensure it covers the area */
+            margin-bottom: 20px; /* Space between the photo and text */
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        /* Project Cards */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .card {
+            background-color: #fff;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+        .card p {
+            font-size: 1rem;
+            color: #666;
+        }
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .card a:hover {
+            background-color: #0056b3;
+        }
+        /* Animations */
+        @keyframes slideInUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="stars"></div> <!-- Starry sky background -->
+    <!-- Start Screen -->
+    <div id="start-screen">
+        <div>
+            <h1>Welcome to My Portfolio</h1>
+            <button id="start-button">Explore My Work</button>
+        </div>
+    </div>
+    
+    <!-- Portfolio Content -->
+    <div id="game-content" class="hidden">
+        <!-- Section 1: Summarizing Statement -->
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <img src="images/harshiddsinh.jpeg" alt="Harshiddsinh Vaghela" class="profile-photo">
+            <p>Hello! I'm Harshiddsinh Vaghela, a passionate software developer specializing in creating efficient and scalable web applications. I love exploring new technologies and am dedicated to continuous learning and improvement.</p>
+            <button onclick="nextSection('education')">Continue to Education</button>
+        </section>
+
+        <!-- Section 2: Education -->
+        <section id="education" class="section hidden">
+            <h2>Education</h2>
+            <p>Computer System Technician Software Support Co-op, Mohawk college</p>
+            <p>Microsoft Certified in security and compliance</p>
+            <button onclick="nextSection('skills')">Continue to Skills</button>
+        </section>
+
+        <!-- Section 3: Skills -->
+        <section id="skills" class="section hidden">
+            <h2>Skills</h2>
+            <p>Some of the key skills I have developed/acquired include:</p>
+            <ul style="list-style: none; padding: 0; font-size: 1.1rem;">
+                <li>🔧 <b>Web Development</b> (HTML, CSS, JavaScript, ReactJS)</li>
+                <li>📊 <b>Data Analysis</b> (Python, SQL, Java, C#)</li>
+                <li>🖼️ <b>Graphic Design</b> (Figma, Photoshop, Wordpress)</li>
+                <li>☁️ <b>Cloud Computing</b> (Azure, AWS)</li>
+            </ul>
+            <button onclick="nextSection('projects')">Continue to Projects</button>
+        </section>
+
+        <!-- Section 4: Projects -->
+        <section id="projects" class="section hidden">
+            <h2>Projects</h2>
+            <div class="card-container">
+                <!-- Project 1 -->
+                <div class="card">
+                    <img src="images/Map.JPG" alt="Interactive Map Application">
+                    <h3>Tourist Map Application</h3>
+                    <p>Built a web app using Google Maps for the tourists to filter and display user-selected locations and the famous tourist sports in the particular area of Hamilton.</p>
+                    <a href="#">View Project</a>
+                </div>
+                <!-- Project 2 -->
+                <div class="card">
+                    <img src="images/Website.png" alt="Portfolio Website">
+                    <h3>Portfolio Website</h3>
+                    <p>Designed and developed a responsive portfolio website using modern web technologies.</p>
+                    <a href="#">View Project</a>
+                </div>
+                <!-- Project 3 -->
+                <div class="card">
+                    <img src="images/Dice.png" alt="ReactJS Dice Roller Game">
+                    <h3>ReactJS Dice Roller Game</h3>
+                    <p>A fun dice-rolling game built with ReactJS, featuring state management and custom hooks.</p>
+                    <a href="#">View Project</a>
+                </div>
+            </div>
+            <button onclick="nextSection('resume')">Continue to Resume</button>
+        </section>
+
+        <!-- Section 5: Resume -->
+        <section id="resume" class="section hidden">
+            <h2>Resume</h2>
+            <p>Click the button below to download my full resume:</p>
+            <a href="resume.pdf" target="_blank" download>Download Resume<br></a>
+            <p> OR </p>
+            <button onclick="nextSection('contact')">Continue to Contact Information</button> <!-- Added Button -->
+        </section>
+
+        <!-- Contact Information -->
+        <section id="contact" class="section hidden">
+            <h2>Contact Me</h2>
+            <p>Email: harshiddhsinh123@gmail.com</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/harshiddsinh-vaghela-339480257/" target="_blank">LinkedIn Profile</a></p>
+            <p>GitHub: <a href="https://github.com/harshiddsinh" target="_blank">GitHub Profile</a></p>
+            <button onclick="nextSection('about')">Go Back to About Me</button>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById("start-button").addEventListener("click", function() {
+            document.getElementById("start-screen").style.display = "none";
+            document.getElementById("game-content").classList.remove("hidden");
+            document.getElementById("about").style.opacity = "1";
+            document.getElementById("about").style.transform = "translateY(0)";
+        });
+
+        function nextSection(sectionId) {
+            const currentSection = document.querySelector(".section:not(.hidden)");
+            if (currentSection) {
+                currentSection.classList.add("hidden");
+            }
+            const nextSection = document.getElementById(sectionId);
+            nextSection.classList.remove("hidden");
+            nextSection.style.opacity = "1";
+            nextSection.style.transform = "translateY(0)";
+        }
+    </script>
+</body>
+</html>
