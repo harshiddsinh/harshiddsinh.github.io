@@ -1,87 +1,265 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harshiddsinh Vaghela - Portfolio</title>
+  <style>
+    body, html {
+      margin: 0; padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      scroll-behavior: smooth;
+    }
 
-export default function Portfolio() {
-  const [dark, setDark] = useState(false);
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background: #222;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+    header h1 { margin: 0; font-size: 1.5rem; }
+    header nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    header nav a:hover { color: #ffc107; }
 
-  return (
-    <div className={`${dark ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"} min-h-screen transition`}>
-      {/* Header */}
-      <header className="flex justify-between items-center p-6 shadow-lg">
-        <h1 className="text-2xl font-bold">Harshiddsinh Vaghela</h1>
-        <button 
-          className="px-4 py-2 bg-blue-500 text-white rounded-xl"
-          onClick={() => setDark(!dark)}
-        >
-          {dark ? "☀️ Light" : "🌙 Dark"}
-        </button>
-      </header>
+    section {
+      padding: 100px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: #007bff;
+    }
 
-      {/* About Section */}
-      <motion.section 
-        className="max-w-3xl mx-auto text-center py-20"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <img src="images/harshiddsinh.jpeg" alt="Profile" className="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg" />
-        <h2 className="text-4xl font-bold mb-4">Software Developer</h2>
-        <p className="text-lg leading-relaxed">
-          Passionate about building scalable apps, cloud integrations, and user-friendly designs.
-          Skilled in React, Vue, Node.js, Azure, and SQL.
-        </p>
-      </motion.section>
+    /* About */
+    #about { text-align: center; }
+    #about img {
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
 
-      {/* Skills */}
-      <section className="max-w-5xl mx-auto py-16 px-4 grid md:grid-cols-2 gap-6">
-        <motion.div whileHover={{ scale: 1.05 }} className="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
-          <h3 className="text-xl font-semibold mb-4">Frontend</h3>
-          <p>React, Vue, JavaScript, TailwindCSS</p>
-        </motion.div>
-        <motion.div whileHover={{ scale: 1.05 }} className="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
-          <h3 className="text-xl font-semibold mb-4">Backend & DB</h3>
-          <p>Node.js, .NET, SQL, MongoDB</p>
-        </motion.div>
-        <motion.div whileHover={{ scale: 1.05 }} className="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
-          <h3 className="text-xl font-semibold mb-4">Cloud & DevOps</h3>
-          <p>Azure, AWS, GitHub Actions</p>
-        </motion.div>
-        <motion.div whileHover={{ scale: 1.05 }} className="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
-          <h3 className="text-xl font-semibold mb-4">Other</h3>
-          <p>Figma, WordPress, Power BI</p>
-        </motion.div>
-      </section>
+    /* Skills */
+    .skill {
+      margin: 15px 0;
+    }
+    .skill-name {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .progress {
+      background: #e9ecef;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 12px;
+      background: linear-gradient(90deg, #007bff, #00c851);
+      width: 0;
+      transition: width 1s ease-in-out;
+    }
 
-      {/* Projects */}
-      <section className="bg-blue-50 dark:bg-gray-700 py-20">
-        <h2 className="text-3xl font-bold text-center mb-12">Projects</h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-          {[
-            { title: "Tourist Map App", img: "images/Map.jpg" },
-            { title: "Portfolio Website", img: "images/Website.png" },
-            { title: "Dice Roller Game", img: "images/Dice.png" }
-          ].map((proj, idx) => (
-            <motion.div key={idx} whileHover={{ y: -10 }} className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
-              <img src={proj.img} alt={proj.title} className="w-full h-40 object-cover" />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold">{proj.title}</h3>
-                <a href="#" className="text-blue-500 hover:underline">View Project</a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+    /* Timeline */
+    .timeline {
+      border-left: 3px solid #007bff;
+      margin: 0 auto;
+      padding-left: 20px;
+    }
+    .timeline-item {
+      margin: 30px 0;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -12px; top: 5px;
+      width: 15px; height: 15px;
+      background: #007bff;
+      border-radius: 50%;
+    }
+    .timeline-item h3 {
+      margin: 0;
+      color: #007bff;
+    }
+    .timeline-item p {
+      margin: 5px 0 0;
+      color: #555;
+    }
 
-      {/* Contact */}
-      <footer className="py-12 text-center">
-        <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
-        <div className="flex justify-center gap-6 text-xl">
-          <a href="mailto:harshiddsinh123@gmail.com"><Mail /></a>
-          <a href="https://linkedin.com/in/harshiddsinh-vaghela-339480257"><Linkedin /></a>
-          <a href="https://github.com/harshiddsinh"><Github /></a>
-        </div>
-        <p className="mt-4">© {new Date().getFullYear()} Harshiddsinh Vaghela</p>
-      </footer>
+    /* Project Cards */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      width: 300px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-10px); }
+    .card img {
+      width: 100%; height: 180px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 15px;
+      color: #007bff;
+    }
+    .card p {
+      margin: 0 15px 20px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Contact */
+    #contact p, #contact a {
+      text-align: center;
+      display: block;
+      font-size: 1.1rem;
+    }
+    #contact a { color: #007bff; text-decoration: none; }
+    #contact a:hover { text-decoration: underline; }
+
+    /* Floating Contact Button */
+    .contact-float {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      background: #007bff;
+      color: #fff;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Harshiddsinh Vaghela</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="about">
+  <img src="images/harshiddsinh.jpeg" alt="Profile">
+  <h2>About Me</h2>
+  <p>I am a passionate Software Developer with expertise in building scalable web apps, cloud solutions, and data-driven systems. I enjoy solving real-world problems with clean, efficient code.</p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skill">
+    <div class="skill-name">React / JavaScript</div>
+    <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
+  </div>
+  <div class="skill">
+    <div class="skill-name">Python / SQL</div>
+    <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+  </div>
+  <div class="skill">
+    <div class="skill-name">C# / .NET</div>
+    <div class="progress"><div class="progress-bar" style="width: 75%"></div></div>
+  </div>
+  <div class="skill">
+    <div class="skill-name">Azure / AWS</div>
+    <div class="progress"><div class="progress-bar" style="width: 70%"></div></div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Business Analyst - Ministry of Transportation</h3>
+      <p>2024 | Streamlined product enhancements, built Power BI dashboards, and managed data for decision-making.</p>
     </div>
-  );
-}
+    <div class="timeline-item">
+      <h3>Junior Web Developer - NICS Cadzone</h3>
+      <p>2022 | Built websites with ReactJS, Bootstrap, and WordPress, integrating APIs for clients.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Software Projects</h3>
+      <p>Built full-stack apps using Java, .NET Core, SQL, and cloud integrations.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card-container">
+    <div class="card">
+      <img src="images/Map.jpg" alt="Tourist Map">
+      <h3>Tourist Map Application</h3>
+      <p>Interactive map with location filters for Hamilton using Google Maps API.</p>
+    </div>
+    <div class="card">
+      <img src="images/Website.png" alt="Portfolio">
+      <h3>Portfolio Website</h3>
+      <p>Modern responsive portfolio built with HTML, CSS, and JavaScript.</p>
+    </div>
+    <div class="card">
+      <img src="images/Dice.png" alt="Dice Game">
+      <h3>Dice Roller Game</h3>
+      <p>Fun ReactJS-based dice game with state management.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:harshiddsinh123@gmail.com">harshiddsinh123@gmail.com</a></p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/harshiddsinh-vaghela-339480257">linkedin.com/in/harshiddsinh</a></p>
+  <p>GitHub: <a href="https://github.com/harshiddsinh">github.com/harshiddsinh</a></p>
+</section>
+
+<!-- Floating Contact -->
+<div class="contact-float" onclick="window.location.href='mailto:harshiddsinh123@gmail.com'">
+  ✉️
+</div>
+
+<script>
+  // Animate skill bars when in view
+  const progressBars = document.querySelectorAll('.progress-bar');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.width = entry.target.getAttribute("style").split(":")[1];
+      }
+    });
+  }, { threshold: 0.5 });
+
+  progressBars.forEach(bar => observer.observe(bar));
+</script>
+
+</body>
+</html>
