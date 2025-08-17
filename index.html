@@ -3,256 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harshiddsinh Vaghela - Portfolio</title>
+  <title>Harshiddsinh Vaghela | Portfolio</title>
   <style>
-    :root {
-      --bg-light: #f8f9fa;
-      --bg-dark: #121212;
-      --text-light: #333;
-      --text-dark: #f5f5f5;
-      --accent: #007bff;
-    }
-    body {
-      margin: 0; font-family: "Segoe UI", sans-serif;
-      background: var(--bg-light); color: var(--text-light);
-      scroll-behavior: smooth; transition: background 0.5s, color 0.5s;
-    }
-    body.dark {
-      background: var(--bg-dark); color: var(--text-dark);
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
     }
 
-    /* Header */
-    header {
-      position: fixed; top: 0; left: 0; width: 100%;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 15px 40px;
-      background: rgba(0,0,0,0.7); color: white;
-      backdrop-filter: blur(10px);
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      background: #1e293b;
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      position: sticky;
+      top: 0;
       z-index: 1000;
     }
-    header h1 { font-size: 1.5rem; margin: 0; }
-    header nav a {
-      color: white; margin-left: 20px; text-decoration: none;
-      transition: color 0.3s;
+    nav a {
+      color: #e2e8f0;
+      margin-left: 2rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
     }
-    header nav a:hover { color: var(--accent); }
-    #darkToggle { cursor: pointer; font-size: 18px; }
-
-    /* Hero */
-    #hero {
-      height: 100vh; display: flex; justify-content: center; align-items: center;
-      text-align: center; background: linear-gradient(135deg, #007bff, #6610f2);
-      color: white;
-    }
-    #hero h2 { font-size: 2.5rem; margin: 20px 0; }
-    #typing {
-      font-size: 1.5rem; color: #ffc107; font-weight: bold;
-      height: 40px; overflow: hidden;
-      border-right: 2px solid #ffc107; white-space: nowrap;
-      animation: typing 4s steps(40,end) infinite alternate;
-    }
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
+    nav a:hover {
+      color: #38bdf8;
     }
 
-    section { padding: 100px 20px; max-width: 1100px; margin: auto; }
-
-    /* About */
-    #about { text-align: center; }
-    #about img {
-      width: 150px; height: 150px; border-radius: 50%;
-      margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    /* Hero Section */
+    .hero {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      background: linear-gradient(90deg, #38bdf8, #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+    .hero p {
+      margin-top: 1rem;
+      max-width: 700px;
+      color: #94a3b8;
     }
 
-    /* Skills */
-    #skills .grid {
-      display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 20px;
+    /* Section Styling */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
     }
-    .skill-card {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(12px);
-      border-radius: 15px; padding: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      text-align: center; transition: transform 0.3s;
-    }
-    .skill-card:hover { transform: translateY(-8px); }
-    .skill-bar { background: #e9ecef; border-radius: 10px; overflow: hidden; height: 10px; margin-top: 10px; }
-    .skill-fill { height: 10px; background: linear-gradient(90deg,#007bff,#00c851); width: 0; transition: width 1.5s; }
-
-    /* Timeline */
-    .timeline { border-left: 3px solid var(--accent); padding-left: 20px; }
-    .timeline-item { margin: 30px 0; position: relative; }
-    .timeline-item::before {
-      content: ""; position: absolute; left: -11px; top: 5px;
-      width: 15px; height: 15px; background: var(--accent); border-radius: 50%;
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #38bdf8;
     }
 
-    /* Projects */
-    .card-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-    .card {
-      width: 300px; border-radius: 15px; overflow: hidden;
-      background: rgba(255,255,255,0.15); backdrop-filter: blur(12px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
+    /* Experience */
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
-    .card:hover { transform: scale(1.05); }
-    .card img { width: 100%; height: 180px; object-fit: cover; }
-    .card h3 { margin: 15px; color: var(--accent); }
-    .card p { margin: 0 15px 20px; color: inherit; }
-
-    /* Contact */
-    #contact { text-align: center; }
-    #contact a { color: var(--accent); text-decoration: none; }
-    #contact a:hover { text-decoration: underline; }
-
-    /* Floating Resume Button */
-    .resume-btn {
-      position: fixed; bottom: 20px; right: 20px;
-      background: var(--accent); color: #fff;
-      padding: 12px 20px; border-radius: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      cursor: pointer; font-weight: bold;
+    .exp-card {
+      background: #1e293b;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .exp-card:hover {
+      transform: translateY(-5px);
+      background: #334155;
+    }
+    .exp-card h3 {
+      font-size: 1.2rem;
+      color: #f1f5f9;
+    }
+    .exp-card span {
+      display: block;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-bottom: 0.5rem;
+    }
+    .exp-card p {
+      font-size: 0.95rem;
+      color: #cbd5e1;
     }
 
-    /* Footer Wave */
+    /* Footer */
     footer {
-      position: relative; height: 150px; background: #007bff;
-      display: flex; justify-content: center; align-items: center; color: white;
+      text-align: center;
+      padding: 2rem;
+      background: #1e293b;
+      color: #94a3b8;
+      font-size: 0.9rem;
     }
-    footer::before {
-      content: ""; position: absolute; top: -80px; left: 0; width: 100%; height: 80px;
-      background: url('https://svgshare.com/i/uYr.svg') repeat-x;
-      animation: wave 10s linear infinite;
-    }
-    @keyframes wave { 100% { background-position-x: 1000px; } }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Harshiddsinh Vaghela</h1>
+  <!-- Navbar -->
   <nav>
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
+    <a href="#home">Home</a>
     <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
-  <span id="darkToggle">🌙</span>
-</header>
 
-<!-- Hero -->
-<section id="hero">
-  <div>
-    <h2>Hello, I’m <span style="color:#ffc107;">Harshiddsinh</span></h2>
-    <div id="typing">I build scalable web apps.</div>
-  </div>
-</section>
-
-<!-- About -->
-<section id="about">
-  <img src="images/harshiddsinh.jpeg" alt="Profile">
-  <h2>About Me</h2>
-  <p>Software Developer with expertise in <b>full-stack development, data analysis, and cloud computing</b>. Experienced in building enterprise solutions, integrating APIs, and delivering impactful applications.</p>
-</section>
-
-<!-- Skills -->
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="grid">
-    <div class="skill-card">
-      <h3>Frontend</h3>
-      <div class="skill-bar"><div class="skill-fill" data-percent="90%"></div></div>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div>
+      <h1>Harshiddsinh Vaghela</h1>
+      <p>Business Analyst & IT Support Specialist with hands-on experience in system design, data analysis, 
+      customer service, and administrative operations. Skilled at delivering solutions that align business needs 
+      with technology.</p>
     </div>
-    <div class="skill-card">
-      <h3>Backend</h3>
-      <div class="skill-bar"><div class="skill-fill" data-percent="85%"></div></div>
-    </div>
-    <div class="skill-card">
-      <h3>Databases</h3>
-      <div class="skill-bar"><div class="skill-fill" data-percent="80%"></div></div>
-    </div>
-    <div class="skill-card">
-      <h3>Cloud</h3>
-      <div class="skill-bar"><div class="skill-fill" data-percent="70%"></div></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Experience -->
-<section id="experience">
-  <h2>Experience</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <h3>Business Analyst - Ministry of Transportation</h3>
-      <p>2024 | Delivered dashboards, optimized workflows, supported product enhancements.</p>
+  <!-- Experience -->
+  <section id="experience">
+    <h2>Professional Experience</h2>
+    <div class="experience-grid">
+
+      <div class="exp-card">
+        <h3>Junior Business Analyst</h3>
+        <span>Ontario Ministry of Transportation | Jan 2024 - Aug 2024 | Hybrid</span>
+        <p>Contributed to product enhancements, analyzed business needs, created Power BI dashboards, 
+        supported procurement and license renewals, and streamlined documentation processes. 
+        Collaborated with teams to ensure timely delivery of government projects.</p>
+      </div>
+
+      <div class="exp-card">
+        <h3>Customer Service Representative</h3>
+        <span>Wireless+ | May 2023 - Dec 2023 | On-site</span>
+        <p>Delivered exceptional customer service, managed IT tickets, and assisted clients with 
+        technical support. Recognized for strong problem-solving and client relationship skills.</p>
+      </div>
+
+      <div class="exp-card">
+        <h3>Order Picker</h3>
+        <span>Innomotive Solutions Group | May 2023 - Sep 2023 | On-site</span>
+        <p>Coordinated order fulfillment processes, ensured accuracy in product handling, and maintained 
+        inventory workflows to support manufacturing operations.</p>
+      </div>
+
+      <div class="exp-card">
+        <h3>Administrative Assistant</h3>
+        <span>Astreca Group | Jan 2020 - Aug 2022 | Ahmedabad, India</span>
+        <p>Managed documentation, coordinated meetings, and supported office operations. 
+        Gained strong organizational and multitasking skills while ensuring compliance with 
+        internal processes.</p>
+      </div>
+
     </div>
-    <div class="timeline-item">
-      <h3>Junior Web Developer - NICS Cadzone</h3>
-      <p>2022 | Built responsive websites with ReactJS, Bootstrap, and APIs.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Projects -->
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="card-container">
-    <div class="card">
-      <img src="images/Map.jpg" alt="Tourist Map">
-      <h3>Tourist Map Application</h3>
-      <p>Interactive Google Maps-based app for Hamilton attractions.</p>
-    </div>
-    <div class="card">
-      <img src="images/Website.png" alt="Portfolio">
-      <h3>Portfolio Website</h3>
-      <p>Responsive personal portfolio built with HTML, CSS, JS.</p>
-    </div>
-    <div class="card">
-      <img src="images/Dice.png" alt="Dice Game">
-      <h3>Dice Roller Game</h3>
-      <p>Dice game using JS with state logic & animations.</p>
-    </div>
-  </div>
-</section>
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p style="text-align:center;">📧 harshiddsinh.vaghela@email.com | 📍 Canada</p>
+  </section>
 
-<!-- Contact -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:harshiddsinh123@gmail.com">harshiddsinh123@gmail.com</a></p>
-  <p>LinkedIn: <a href="https://linkedin.com/in/harshiddsinh-vaghela-339480257">linkedin.com/in/harshiddsinh</a></p>
-  <p>GitHub: <a href="https://github.com/harshiddsinh">github.com/harshiddsinh</a></p>
-</section>
-
-<!-- Floating Resume Button -->
-<div class="resume-btn" onclick="window.open('resume.pdf')">📄 Resume</div>
-
-<footer>
-  <p>© 2025 Harshiddsinh Vaghela</p>
-</footer>
-
-<script>
-  // Dark Mode
-  document.getElementById("darkToggle").onclick = () => {
-    document.body.classList.toggle("dark");
-    document.getElementById("darkToggle").textContent = 
-      document.body.classList.contains("dark") ? "☀️" : "🌙";
-  };
-
-  // Animate skill bars on scroll
-  const fills = document.querySelectorAll(".skill-fill");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.width = entry.target.dataset.percent;
-      }
-    });
-  }, { threshold: 0.5 });
-  fills.forEach(bar => observer.observe(bar));
-</script>
+  <!-- Footer -->
+  <footer>
+    © 2025 Harshiddsinh Vaghela. All rights reserved.
+  </footer>
 
 </body>
 </html>
