@@ -3,183 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harshiddsinh Vaghela | Portfolio</title>
+  <title>Harshiddsinh Vaghela - Portfolio</title>
   <style>
-    /* Reset */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+      color: #333;
     }
-
-    /* Navbar */
-    nav {
-      background: #1e293b;
-      padding: 0.8rem 2rem;
-      display: flex;
-      justify-content: flex-end;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
-      color: #e2e8f0;
-      margin-left: 2rem;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #38bdf8;
-    }
-
-    /* Hero Section */
-    .hero {
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 6rem 2rem;
-    }
-    .hero h1 {
-      font-size: 2.8rem;
-      background: linear-gradient(90deg, #38bdf8, #6366f1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 800;
-    }
-    .hero p {
-      margin-top: 1rem;
-      max-width: 700px;
-      color: #94a3b8;
-    }
-
-    /* Section Styling */
-    section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      color: #38bdf8;
-    }
-
-    /* Experience */
-    .experience-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    .exp-card {
-      background: #1e293b;
-      padding: 1.5rem;
-      border-radius: 0.75rem;
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-    .exp-card:hover {
-      transform: translateY(-5px);
-      background: #334155;
-    }
-    .exp-card h3 {
-      font-size: 1.2rem;
-      color: #f1f5f9;
-    }
-    .exp-card span {
-      display: block;
-      font-size: 0.9rem;
-      color: #94a3b8;
-      margin-bottom: 0.5rem;
-    }
-    .exp-card p {
-      font-size: 0.95rem;
-      color: #cbd5e1;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
+    header {
+      background: #0d1b2a;
+      color: white;
       padding: 2rem;
-      background: #1e293b;
-      color: #94a3b8;
+      text-align: center;
+    }
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      margin: 0.5rem 0;
+      font-size: 2rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+    section {
+      padding: 2rem 10%;
+    }
+    h2 {
+      border-left: 4px solid #0077b6;
+      padding-left: 10px;
+      color: #0077b6;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill {
+      background: #0077b6;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 20px;
       font-size: 0.9rem;
+    }
+    .experience {
+      margin: 1.5rem 0;
+      border-left: 3px solid #ccc;
+      padding-left: 1rem;
+    }
+    .experience h3 {
+      margin: 0;
+      color: #0d1b2a;
+    }
+    .experience p {
+      margin: 0.2rem 0;
+      color: #555;
+    }
+    .collaborate {
+      text-align: center;
+      background: #0077b6;
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+    }
+    .collaborate button {
+      background: white;
+      color: #0077b6;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .collaborate button:hover {
+      background: #023e8a;
+      color: white;
+    }
+    footer {
+      background: #0d1b2a;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <header>
+    <img src="profile.jpg" alt="Profile Photo">
+    <h1>Harshiddsinh Vaghela</h1>
+    <p>Business Analyst | IT Support | Customer Experience</p>
+  </header>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div>
-      <h1>Harshiddsinh Vaghela</h1>
-      <p>Business Analyst & IT Support Specialist with hands-on experience in system design, data analysis, 
-      customer service, and administrative operations. Skilled at delivering solutions that align business needs 
-      with technology.</p>
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">Business Analysis</div>
+      <div class="skill">Data Management (Excel, Power BI)</div>
+      <div class="skill">Systems Design</div>
+      <div class="skill">Customer Support</div>
+      <div class="skill">Project Documentation</div>
+      <div class="skill">Procurement & Licensing</div>
+      <div class="skill">SQL Queries</div>
+      <div class="skill">Team Collaboration</div>
     </div>
   </section>
 
-  <!-- Experience -->
-  <section id="experience">
-    <h2>Professional Experience</h2>
-    <div class="experience-grid">
-
-      <div class="exp-card">
-        <h3>Junior Business Analyst</h3>
-        <span>Ontario Ministry of Transportation | Jan 2024 - Aug 2024 | Hybrid</span>
-        <p>Contributed to product enhancements, analyzed business needs, created Power BI dashboards, 
-        supported procurement and license renewals, and streamlined documentation processes. 
-        Collaborated with teams to ensure timely delivery of government projects.</p>
-      </div>
-
-      <div class="exp-card">
-        <h3>Customer Service Representative</h3>
-        <span>Wireless+ | May 2023 - Dec 2023 | On-site</span>
-        <p>Delivered exceptional customer service, managed IT tickets, and assisted clients with 
-        technical support. Recognized for strong problem-solving and client relationship skills.</p>
-      </div>
-
-      <div class="exp-card">
-        <h3>Order Picker</h3>
-        <span>Innomotive Solutions Group | May 2023 - Sep 2023 | On-site</span>
-        <p>Coordinated order fulfillment processes, ensured accuracy in product handling, and maintained 
-        inventory workflows to support manufacturing operations.</p>
-      </div>
-
-      <div class="exp-card">
-        <h3>Administrative Assistant</h3>
-        <span>Astreca Group | Jan 2020 - Aug 2022 | Ahmedabad, India</span>
-        <p>Managed documentation, coordinated meetings, and supported office operations. 
-        Gained strong organizational and multitasking skills while ensuring compliance with 
-        internal processes.</p>
-      </div>
-
+  <section>
+    <h2>Experience</h2>
+    <div class="experience">
+      <h3>Junior Business Analyst - Ministry of Transportation</h3>
+      <p><em>Jan 2024 – Aug 2024 · 8 months</em></p>
+      <p>Worked on RFIs, system design, and supported product enhancements. Assisted in procurement and license renewals, developed Power BI dashboards, and ensured accurate documentation for stakeholders.</p>
+    </div>
+    <div class="experience">
+      <h3>Customer Service Representative - Wireless+</h3>
+      <p><em>May 2023 – Dec 2023 · 8 months</em></p>
+      <p>Provided technical and customer support, resolving escalations and ensuring client satisfaction with mobile and wireless solutions.</p>
+    </div>
+    <div class="experience">
+      <h3>Order Picker - Innomotive Solutions Group</h3>
+      <p><em>May 2023 – Sep 2023 · 5 months</em></p>
+      <p>Efficiently handled warehouse operations, ensuring timely and accurate order fulfillment in a fast-paced environment.</p>
+    </div>
+    <div class="experience">
+      <h3>Administrative Assistant - Astreca Group</h3>
+      <p><em>Jan 2020 – Aug 2022 · 2 years 8 months</em></p>
+      <p>Managed office administration, maintained records, and supported project coordination to ensure smooth daily operations.</p>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p style="text-align:center;">📧 harshiddsinh.vaghela@email.com | 📍 Canada</p>
+  <section class="collaborate">
+    <h2>Let’s Collaborate</h2>
+    <p>I am always open to collaborating on innovative projects or discussing new opportunities. Feel free to reach out!</p>
+    <button onclick="contactMe()">Contact Me</button>
   </section>
 
-  <!-- Footer -->
   <footer>
-    © 2025 Harshiddsinh Vaghela. All rights reserved.
+    <p>© 2025 Harshiddsinh Vaghela | Portfolio</p>
   </footer>
+
+  <script>
+    function contactMe() {
+      window.location.href = "mailto:your-email@example.com?subject=Collaboration Opportunity&body=Hi Harshiddsinh, I’d like to collaborate with you...";
+    }
+  </script>
 
 </body>
 </html>
