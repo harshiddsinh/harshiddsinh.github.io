@@ -5,54 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Harshiddsinh Vaghela – Software Developer</title>
   <meta name="description" content="Advanced portfolio of Harshiddsinh Vaghela – software developer & business analyst. Projects, experience, skills, and contact." />
-  <meta name="color-scheme" content="dark">
-
-  <!-- Open Graph / Twitter for rich sharing -->
+  <meta name="color-scheme" content="dark light">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://your-domain.example/" />
+  <link rel="icon" href="images/favicon.png" type="image/png">
   <meta property="og:title" content="Harshiddsinh Vaghela – Software Developer" />
-  <meta property="og:description" content="Reliable, scalable web solutions. Projects, experience, and contact." />
+  <meta property="og:description" content="Software Developer & Business Analyst crafting reliable, scalable web solutions." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="images/harshiddsinh-og.jpg" />
+  <meta property="og:url" content="https://your-domain.example/" />
+  <meta property="og:image" content="images/og-cover.png" />
   <meta name="twitter:card" content="summary_large_image" />
-
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://avatars.githubusercontent.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://api.github.com; connect-src https://api.github.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:"> 
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Harshiddsinh Vaghela",
+    "jobTitle":"Software Developer & Business Analyst",
+    "email":"mailto:harshiddsinh123@gmail.com",
+    "image":"images/harshiddsinh.jpeg",
+    "sameAs":[
+      "https://github.com/harshiddsinh",
+      "https://www.linkedin.com/in/harshiddsinh-vaghela-339480257/"
+    ],
+    "url":"https://your-domain.example/"
+  }</script>
   <style>
-    /* ========== Design tokens (Dark only) ========== */
+    /* ===== Design tokens ===== */
     :root{
-      --bg: #0b1220;          /* primary background */
-      --panel: #121a2b;       /* card bg */
-      --muted: #8aa0c6;       /* secondary text */
-      --text: #e8eefc;        /* primary text */
-      --primary: #4cc9f0;     /* accent */
-      --primary-2:#4361ee;    /* secondary accent */
-      --ok:#10b981;           /* success */
-      --warn:#f59e0b;         /* warning */
-      --danger:#ef4444;       /* danger */
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --shadow-sm: 0 6px 18px rgba(0,0,0,.28);
-      --maxw: 1180px;
+      --bg: #0b1220; --panel:#121a2b; --muted:#8aa0c6; --text:#e8eefc;
+      --primary:#4cc9f0; --primary-2:#4361ee; --ok:#10b981; --warn:#f59e0b; --danger:#ef4444;
+      --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.35); --shadow-sm:0 6px 18px rgba(0,0,0,.28); --maxw:1180px;
+      --focus: 0 0 0 3px color-mix(in oklab, var(--primary), transparent 40%);
     }
-
+    @media (prefers-color-scheme: light){ :root{ --bg:#f6f8fc; --panel:#ffffff; --text:#081223; --muted:#52607b; } }
     *{box-sizing:border-box}
+    html:focus-within { scroll-behavior: smooth; }
     html,body{height:100%}
-    body{
-      margin:0; font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text); background:var(--bg); overflow-x:hidden;
-    }
-    a{color:var(--primary)}
-    img{max-width:100%; display:block}
+    body{margin:0; font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji"; color:var(--text); background:var(--bg); overflow-x:hidden}
+    a{color:var(--primary)} img{max-width:100%; display:block}
     .container{width:100%; max-width:var(--maxw); margin-inline:auto; padding:0 20px}
+    /* Skip link */
+    .skip-link{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip-link:focus{left:10px; top:10px; width:auto; height:auto; background:var(--panel); color:var(--text); padding:10px 14px; border-radius:10px; box-shadow:var(--focus)}
 
-    /* ======= Top nav ======= */
-    .nav{position:sticky; top:0; z-index:50; backdrop-filter: saturate(140%) blur(10px); background: color-mix(in oklab, var(--bg), transparent 45%); border-bottom:1px solid color-mix(in oklab, var(--text), transparent 88%)}
-    .nav-inner{display:flex; align-items:center; justify-content:space-between; height:64px}
+    /* ===== Nav ===== */
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(10px); background: color-mix(in oklab, var(--bg), transparent 45%); border-bottom:1px solid color-mix(in oklab, var(--text), transparent 88%)}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; min-height:64px}
     .brand{display:flex; gap:12px; align-items:center; text-decoration:none; color:var(--text)}
     .brand-badge{width:36px; height:36px; border-radius:11px; background:linear-gradient(135deg, var(--primary), var(--primary-2)); display:grid; place-items:center; box-shadow:var(--shadow-sm)}
     .brand-badge span{font-weight:800; letter-spacing:.5px}
     .nav a.link{color:var(--text); opacity:.9; text-decoration:none; margin-left:22px; font-weight:600}
     .nav a.link.active{color:var(--primary)}
+    .actions{display:flex; gap:10px; align-items:center}
+    .btn{border:0; border-radius:12px; padding:10px 14px; font-weight:700; cursor:pointer}
+    .btn.primary{background:linear-gradient(135deg, var(--primary), var(--primary-2)); color:#05101d}
+    .btn.ghost{background:transparent; color:var(--text)}
+    .btn:focus-visible, .link:focus-visible, .icon-btn:focus-visible, .input:focus-visible, textarea:focus-visible{outline:none; box-shadow:var(--focus)}
 
-    /* ======= Hero ======= */
-    .hero{position:relative; padding:72px 0 40px;}
+    /* ===== Hero ===== */
+    .hero{position:relative; padding:72px 0 40px}
     .hero .wrap{display:grid; grid-template-columns: 1.1fr .9fr; gap:40px; align-items:center}
     .kicker{display:inline-flex; gap:10px; align-items:center; padding:6px 10px; border-radius:999px; background: color-mix(in oklab, var(--panel), transparent 25%); border:1px solid color-mix(in oklab, var(--text), transparent 90%)}
     .kicker .dot{width:8px; height:8px; border-radius:50%; background:var(--ok)}
@@ -61,18 +72,17 @@
     .social{display:flex; gap:10px; margin-top:18px}
     .icon-btn{width:40px; height:40px; border-radius:12px; display:grid; place-items:center; background:var(--panel); border:1px solid color-mix(in oklab, var(--text), transparent 88%)}
     .photo-card{justify-self:center; width:280px; aspect-ratio:1/1; border-radius:24px; overflow:hidden; position:relative; box-shadow:var(--shadow)}
-    .photo-card img{width:100%; height:100%; object-fit:cover}
     .photo-card::after{content:""; position:absolute; inset:0; background: radial-gradient(80% 80% at 80% 10%, #0000 0%, #0006 80%)}
 
-    /* Floating particles canvas */
-    #fx{position:absolute; inset:0; pointer-events:none; opacity:.4}
+    /* FX canvas */
+    #fx{position:absolute; inset:0; pointer-events:none; opacity:.35}
 
-    /* ======= Sections generic ======= */
+    /* ===== Sections ===== */
     section{padding:70px 0}
     .section-title{font-size: clamp(22px, 2.4vw, 34px); margin:0 0 20px}
     .muted{color:var(--muted)}
 
-    /* ======= Skills ======= */
+    /* ===== Skills ===== */
     .skills{display:grid; grid-template-columns: repeat(12, 1fr); gap:16px}
     .skill-card{grid-column: span 4; min-height:130px; padding:18px; border-radius:var(--radius); background:var(--panel); border:1px solid color-mix(in oklab, var(--text), transparent 90%); box-shadow:var(--shadow-sm); position:relative; overflow:hidden}
     @media (max-width:900px){ .skill-card{grid-column: span 6} }
@@ -83,7 +93,7 @@
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
     .chip{font-size:12px; padding:4px 8px; border-radius:999px; background:color-mix(in oklab, var(--panel), transparent 10%); border:1px solid color-mix(in oklab, var(--text), transparent 85%)}
 
-    /* ======= Experience timeline ======= */
+    /* ===== Timeline ===== */
     .timeline{position:relative; margin-top:10px}
     .timeline::before{content:""; position:absolute; left:18px; top:0; bottom:0; width:2px; background:color-mix(in oklab, var(--text), transparent 85%)}
     .t-item{position:relative; display:grid; grid-template-columns: 40px 1fr; gap:16px; margin:24px 0; opacity:0; transform: translateY(20px); transition:.6s ease}
@@ -93,7 +103,7 @@
     .t-meta{font-weight:700}
     .t-sub{color:var(--muted); font-size:14px}
 
-    /* ======= Projects with filters ======= */
+    /* ===== Projects ===== */
     .filters{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:14px}
     .pill{border:1px solid color-mix(in oklab, var(--text), transparent 85%); background:var(--panel); color:var(--text); padding:8px 12px; border-radius:999px; cursor:pointer; font-weight:700}
     .pill.active{background:linear-gradient(135deg, var(--primary), var(--primary-2)); color:#061120}
@@ -108,51 +118,62 @@
     @media (max-width:900px){ .project{grid-column: span 6} }
     @media (max-width:640px){ .project{grid-column: span 12} }
 
-    /* ======= Contact / collaborate ======= */
+    /* ===== GitHub spotlight ===== */
+    .gh-grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:14px}
+    .repo{grid-column: span 6; padding:14px; border-radius:14px; background:var(--panel); border:1px solid color-mix(in oklab, var(--text), transparent 90%)}
+    .repo h4{margin:0 0 6px}
+    .repo .meta{color:var(--muted); font-size:13px}
+    @media (max-width:800px){ .repo{grid-column: span 12} }
+
+    /* ===== Contact ===== */
     .cta{display:grid; grid-template-columns: 2fr 1fr; gap:24px; align-items:center}
     .card{padding:18px; border-radius:16px; background:var(--panel); border:1px solid color-mix(in oklab, var(--text), transparent 90%)}
     .form{display:grid; gap:12px}
     .input, textarea{width:100%; padding:12px 14px; border-radius:12px; border:1px solid color-mix(in oklab, var(--text), transparent 85%); background:transparent; color:var(--text)}
     textarea{min-height:120px}
 
-    /* ======= Utilities ======= */
+    /* ===== Motion preferences ===== */
+    @media (prefers-reduced-motion: reduce){
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      #fx { display:none; }
+    }
+
+    /* Utilities */
     .reveal{opacity:0; transform:translateY(16px); transition:.7s cubic-bezier(.2,.65,.2,1)}
     .reveal.on{opacity:1; transform:none}
     .center{text-align:center}
     .mt-8{margin-top:32px}
     .mb-2{margin-bottom:8px}
-
-    /* Respect reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      *{animation: none !important; transition: none !important}
-    }
+    @media print{ .nav, #fx, .actions, .social, .p-actions { display:none !important } body{ background:#fff; color:#000} }
   </style>
 </head>
 <body>
-  <!-- ======= FX canvas for subtle particles ======= -->
+  <a class="skip-link" href="#home">Skip to main content</a>
   <canvas id="fx" aria-hidden="true"></canvas>
 
-  <!-- ======= Top Navigation ======= -->
+  <!-- ===== Nav ===== -->
   <nav class="nav" role="navigation" aria-label="Primary">
     <div class="container nav-inner">
       <a class="brand" href="#home" aria-label="Home">
-        <div class="brand-badge"><span>HV</span></div>
+        <div class="brand-badge" aria-hidden="true"><span>HV</span></div>
         <strong>Harshiddsinh Vaghela</strong>
       </a>
       <div>
         <a class="link" href="#skills">Skills</a>
         <a class="link" href="#experience">Experience</a>
         <a class="link" href="#projects">Projects</a>
+        <a class="link" href="#github">GitHub</a>
         <a class="link" href="#contact">Contact</a>
       </div>
       <div class="actions">
-        <!-- removed theme toggle and résumé button per request -->
+        <button class="btn ghost" id="themeToggle" aria-label="Toggle theme">🌓</button>
+        <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">Download résumé</a>
       </div>
     </div>
   </nav>
 
-  <!-- ======= Hero ======= -->
-  <header id="home" class="hero">
+  <!-- ===== Hero ===== -->
+  <header id="home" class="hero" role="banner">
     <div class="container wrap">
       <div>
         <span class="kicker"><span class="dot" aria-hidden="true"></span> Available for collaboration</span>
@@ -160,109 +181,123 @@
         <p class="subtitle">I turn business requirements into robust systems. Experienced across frontend, backend, data, and cloud. Ex‑Ministry of Transportation (ON). Let’s build something impactful together.</p>
         <div class="social" aria-label="Social links">
           <a class="icon-btn" href="mailto:harshiddsinh123@gmail.com" aria-label="Email">
-            <!-- mail icon -->
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.511l8 5.333 8-5.333V6H4zm16 12V8.689l-7.382 4.914a2 2 0 0 1-2.236 0L3 8.689V18h17z" fill="currentColor"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.511l8 5.333 8-5.333V6H4zm16 12V8.689l-7.382 4.914a2 2 0 0 1-2.236 0L3 8.689V18h17z" fill="currentColor"/></svg>
           </a>
           <a class="icon-btn" href="https://www.linkedin.com/in/harshiddsinh-vaghela-339480257/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0zM8 8h4.8v2.2h.07c.67-1.27 2.31-2.6 4.75-2.6 5.08 0 6.02 3.34 6.02 7.68V24h-5v-7.6c0-1.82-.03-4.17-2.54-4.17-2.54 0-2.93 1.98-2.93 4.03V24H8z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0zM8 8h4.8v2.2h.07c.67-1.27 2.31-2.6 4.75-2.6 5.08 0 6.02 3.34 6.02 7.68V24h-5v-7.6c0-1.82-.03-4.17-2.54-4.17-2.54 0-2.93 1.98-2.93 4.03V24H8z"/></svg>
           </a>
           <a class="icon-btn" href="https://github.com/harshiddsinh" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.35-1.79-1.35-1.79-1.1-.76.08-.75.08-.75 1.22.09 1.87 1.25 1.87 1.25 1.08 1.85 2.83 1.31 3.52 1 .11-.79.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.31 1.23a11.51 11.51 0 0 1 6.02 0c2.3-1.55 3.31-1.23 3.31-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.63-5.49 5.93.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.35-1.79-1.35-1.79-1.1-.76.08-.75.08-.75 1.22.09 1.87 1.25 1.87 1.25 1.08 1.85 2.83 1.31 3.52 1 .11-.79.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.31 1.23a11.51 11.51 0 0 1 6.02 0c2.3-1.55 3.31-1.23 3.31-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.63-5.49 5.93.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5z"/></svg>
           </a>
         </div>
       </div>
-      <div class="photo-card" aria-hidden="false" aria-label="Profile photo">
-        <img src="images/harshiddsinh.jpeg" alt="Harshiddsinh Vaghela portrait" loading="lazy"/>
-      </div>
+      <figure class="photo-card" aria-label="Profile photo">
+        <img srcset="images/harshiddsinh.jpeg 1x, images/harshiddsinh@2x.jpeg 2x" src="images/harshiddsinh.jpeg" alt="Portrait of Harshiddsinh Vaghela" loading="lazy" width="560" height="560"/>
+      </figure>
     </div>
   </header>
 
-  <!-- ======= Skills ======= -->
-  <section id="skills" class="container">
-    <h2 class="section-title">Core skills</h2>
-    <p class="muted mb-2">Full‑stack web development, data analysis, and cloud foundations.
-      Hover/click to explore.
-    </p>
+  <!-- ===== Skills ===== -->
+  <section id="skills" class="container" aria-labelledby="skillsTitle">
+    <h2 class="section-title" id="skillsTitle">Core skills</h2>
+    <p class="muted mb-2">Full‑stack web development, data analysis, and cloud foundations. Hover/click to explore.</p>
     <div class="skills" id="skillsGrid" aria-live="polite"></div>
   </section>
 
-  <!-- ======= Experience ======= -->
-  <section id="experience" class="container">
-    <h2 class="section-title">Experience</h2>
+  <!-- ===== Experience ===== -->
+  <section id="experience" class="container" aria-labelledby="expTitle">
+    <h2 class="section-title" id="expTitle">Experience</h2>
     <div class="timeline">
       <div class="t-item reveal">
         <div class="t-dot" aria-hidden="true"></div>
-        <div class="t-card">
-          <div class="t-meta">Junior Business Analyst – Ontario Ministry of Transportation</div>
-          <div class="t-sub">Jan 2024 – Aug 2024 · Hybrid</div>
-          <p>Supported RFIs and systems design, produced Power BI dashboards, assisted procurement & license renewals, and maintained accurate, accessible documentation for teams and stakeholders.</p>
-          <div class="chips"><span class="chip">Power BI</span><span class="chip">Process improvement</span><span class="chip">Stakeholder support</span></div>
-        </div>
+        <article class="t-card">
+          <div class="t-meta">Incident Analyst (Contract) – Scotiabank</div>
+          <div class="t-sub">Jan 2025 – Jun 2025 · Hybrid</div>
+          <p>Monitored and managed ServiceNow incident queue (50+/day) with 98% SLA compliance. Built Tableau/QuickSight dashboards for insights and root-cause analysis.</p>
+          <div class="chips"><span class="chip">ServiceNow</span><span class="chip">SLA</span><span class="chip">Tableau</span><span class="chip">QuickSight</span></div>
+        </article>
       </div>
       <div class="t-item reveal">
         <div class="t-dot" aria-hidden="true"></div>
-        <div class="t-card">
+        <article class="t-card">
+          <div class="t-meta">Junior Business Analyst – Ontario Ministry of Transportation</div>
+          <div class="t-sub">Jan 2024 – Aug 2024 · Hybrid</div>
+          <p>Supported RFIs, systems design, and Power BI dashboards; assisted procurement & license renewals; maintained accurate documentation for stakeholders.</p>
+          <div class="chips"><span class="chip">Power BI</span><span class="chip">Process improvement</span><span class="chip">Stakeholder support</span></div>
+        </article>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-dot" aria-hidden="true"></div>
+        <article class="t-card">
           <div class="t-meta">Customer Service Representative – Wireless+</div>
           <div class="t-sub">May 2023 – Dec 2023 · On‑site</div>
           <p>Resolved technical & account issues, created/updated tickets, and ensured excellent customer experience and SLA adherence.</p>
           <div class="chips"><span class="chip">Ticketing</span><span class="chip">Troubleshooting</span><span class="chip">SLA</span></div>
-        </div>
+        </article>
       </div>
       <div class="t-item reveal">
         <div class="t-dot" aria-hidden="true"></div>
-        <div class="t-card">
-          <div class="t-meta">Order Picker – INNOMOTIVE Solutions Group</div>
-          <div class="t-sub">May 2023 – Sep 2023 · On‑site</div>
-          <p>Handled order fulfillment and inventory accuracy in a fast‑paced environment; supported manufacturing operations with reliable, on‑time processing.</p>
-          <div class="chips"><span class="chip">Inventory</span><span class="chip">Quality</span></div>
-        </div>
-      </div>
-      <div class="t-item reveal">
-        <div class="t-dot" aria-hidden="true"></div>
-        <div class="t-card">
+        <article class="t-card">
           <div class="t-meta">Administrative Assistant – Astreca Group</div>
           <div class="t-sub">Jan 2020 – Aug 2022 · Ahmedabad, India</div>
           <p>Managed documentation, coordinated meetings, and supported office operations while enforcing process compliance and timely communications.</p>
           <div class="chips"><span class="chip">Documentation</span><span class="chip">Operations</span></div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ======= Projects ======= -->
-  <section id="projects" class="container">
-    <h2 class="section-title">Selected projects</h2>
+  <!-- ===== Projects ===== -->
+  <section id="projects" class="container" aria-labelledby="projectsTitle">
+    <h2 class="section-title" id="projectsTitle">Selected projects</h2>
     <div class="filters" role="tablist" aria-label="Project filters">
       <button class="pill active" data-filter="all" role="tab" aria-selected="true">All</button>
       <button class="pill" data-filter="web" role="tab">Web</button>
       <button class="pill" data-filter="data" role="tab">Data</button>
       <button class="pill" data-filter="game" role="tab">Game</button>
     </div>
-    <div class="grid" id="projectGrid"></div>
+    <div class="grid" id="projectGrid" aria-live="polite"></div>
   </section>
 
-  <!-- ======= Contact / Collaborate ======= -->
-  <section id="contact" class="container">
-    <h2 class="section-title">Let’s collaborate</h2>
+  <!-- ===== GitHub spotlight ===== -->
+  <section id="github" class="container" aria-labelledby="ghTitle">
+    <h2 class="section-title" id="ghTitle">GitHub spotlight</h2>
+    <p class="muted mb-2">A few repositories from <strong>@harshiddsinh</strong> (auto‑fetched client‑side, sorted by stars).</p>
+    <div class="gh-grid" id="ghGrid" aria-live="polite"></div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="container" aria-labelledby="contactTitle">
+    <h2 class="section-title" id="contactTitle">Let’s collaborate</h2>
     <div class="cta">
       <div class="card">
         <p class="muted">Have an idea, role, or project in mind? I’m open to freelance, contract, or full‑time opportunities. Tell me what you’re building and how I can help.</p>
-        <form class="form" id="contactForm">
-          <input class="input" name="name" placeholder="Your name" required>
-          <input class="input" name="email" placeholder="Your email" type="email" required>
-          <textarea name="message" placeholder="What would you like to build together?" required></textarea>
-          <div style="display:flex; gap:10px">
-            <button class="btn sm" style="background:linear-gradient(135deg, var(--primary), var(--primary-2)); color:#061120" type="submit">Send email</button>
-            <a class="btn sm" style="background:transparent; border:1px solid color-mix(in oklab, var(--text), transparent 85%); color:var(--text)" href="mailto:harshiddsinh123@gmail.com">Or email directly</a>
+        <form class="form" id="contactForm" autocomplete="on" novalidate>
+          <label>
+            <span class="sr-only">Your name</span>
+            <input class="input" name="name" placeholder="Your name" required aria-required="true">
+          </label>
+          <label>
+            <span class="sr-only">Your email</span>
+            <input class="input" name="email" placeholder="Your email" type="email" required aria-required="true">
+          </label>
+          <label>
+            <span class="sr-only">Message</span>
+            <textarea name="message" placeholder="What would you like to build together?" required aria-required="true"></textarea>
+          </label>
+          <div style="display:flex; gap:10px; align-items:center">
+            <button class="btn primary sm" type="submit">Send email</button>
+            <a class="btn ghost sm" href="mailto:harshiddsinh123@gmail.com">Or email directly</a>
+            <span id="formMsg" class="muted" role="status" aria-live="polite" style="margin-left:8px"></span>
           </div>
         </form>
       </div>
-      <div class="card">
+      <aside class="card" aria-label="Quick links">
         <h3 class="mb-2">Quick links</h3>
         <p><strong>Email:</strong> <a href="mailto:harshiddsinh123@gmail.com">harshiddsinh123@gmail.com</a></p>
         <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/harshiddsinh-vaghela-339480257/" target="_blank" rel="noopener">harshiddsinh‑vaghela</a></p>
         <p><strong>GitHub:</strong> <a href="https://github.com/harshiddsinh" target="_blank" rel="noopener">@harshiddsinh</a></p>
-      </div>
+      </aside>
     </div>
   </section>
 
@@ -271,24 +306,49 @@
   </footer>
 
   <script>
-    // ======= Particle background (subtle) =======
+    // ===== Theme (persist) =====
+    const themeToggle = document.getElementById('themeToggle');
+    const stored = localStorage.getItem('theme');
+    if(stored === 'light'){ document.documentElement.style.setProperty('--bg','#f6f8fc'); document.documentElement.style.setProperty('--panel','#ffffff'); document.documentElement.style.setProperty('--text','#081223'); document.documentElement.style.setProperty('--muted','#52607b'); }
+    themeToggle?.addEventListener('click', ()=>{
+      const isDark = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() === '#0b1220';
+      if(isDark){
+        document.documentElement.style.setProperty('--bg','#f6f8fc');
+        document.documentElement.style.setProperty('--panel','#ffffff');
+        document.documentElement.style.setProperty('--text','#081223');
+        document.documentElement.style.setProperty('--muted','#52607b');
+        localStorage.setItem('theme','light');
+      } else {
+        document.documentElement.style.setProperty('--bg','#0b1220');
+        document.documentElement.style.setProperty('--panel','#121a2b');
+        document.documentElement.style.setProperty('--text','#e8eefc');
+        document.documentElement.style.setProperty('--muted','#8aa0c6');
+        localStorage.setItem('theme','dark');
+      }
+    });
+
+    // ===== Particle FX (reduced for performance) =====
     const fx = document.getElementById('fx');
     const ctx = fx.getContext('2d');
     let W, H, dots;
     function initFX(){
       const hero = document.querySelector('.hero');
-      W = fx.width = window.innerWidth; H = fx.height = (hero ? hero.offsetHeight : 420) + 120;
-      dots = Array.from({length: 60}, ()=>({x: Math.random()*W, y: Math.random()*H, r: Math.random()*2+0.5, vx:(Math.random()-.5)*.4, vy:(Math.random()-.5)*.4}));
+      W = fx.width = window.innerWidth; H = fx.height = hero ? hero.offsetHeight + 120 : 400;
+      const density = Math.max(40, Math.min(90, Math.round(window.innerWidth/30)));
+      dots = Array.from({length: density}, ()=>({x: Math.random()*W, y: Math.random()*H, r: Math.random()*2+0.5, vx:(Math.random()-.5)*.35, vy:(Math.random()-.5)*.35}));
     }
+    let raf;
     function tick(){
       ctx.clearRect(0,0,W,H);
       ctx.fillStyle = 'rgba(255,255,255,.6)';
-      dots.forEach(d=>{ d.x+=d.vx; d.y+=d.vy; if(d.x<0||d.x>W) d.vx*=-1; if(d.y<0||d.y>H) d.vy*=-1; ctx.beginPath(); ctx.arc(d.x,d.y,d.r,0,Math.PI*2); ctx.fill(); });
-      requestAnimationFrame(tick);
+      for(const d of dots){ d.x+=d.vx; d.y+=d.vy; if(d.x<0||d.x>W) d.vx*=-1; if(d.y<0||d.y>H) d.vy*=-1; ctx.beginPath(); ctx.arc(d.x,d.y,d.r,0,Math.PI*2); ctx.fill(); }
+      raf = requestAnimationFrame(tick);
     }
-    initFX(); tick(); window.addEventListener('resize', initFX);
+    const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
+    function startFX(){ if(mql.matches) return; initFX(); cancelAnimationFrame(raf); tick(); }
+    startFX(); window.addEventListener('resize', startFX);
 
-    // ======= Skills data & animation =======
+    // ===== Skills data & animation =====
     const skills = [
       { title:'Frontend', level:90, tags:['HTML','CSS','JavaScript','Responsive','Accessibility'] },
       { title:'Backend', level:80, tags:['Node.js','.NET','REST','Auth'] },
@@ -298,77 +358,50 @@
       { title:'UX/PM', level:75, tags:['Wireframes','Stakeholders','SLA'] },
     ];
     const skillsGrid = document.getElementById('skillsGrid');
-    skills.forEach(s=>{
+    for(const s of skills){
       const el = document.createElement('div');
       el.className='skill-card reveal';
       el.innerHTML = `<h4>${s.title}</h4>
         <div class="meter" aria-label="${s.title} proficiency"><div class="bar" style="width:${s.level}%"></div></div>
         <div class="chips">${s.tags.map(t=>`<span class='chip'>${t}</span>`).join('')}</div>`;
       skillsGrid.appendChild(el);
-    });
+    }
 
     // Reveal on scroll
     const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on','reveal'); const bar=e.target.querySelector('.bar'); if(bar){ bar.style.width = bar.style.width; } }) })
+      for(const e of entries){ if(e.isIntersecting){ e.target.classList.add('on','reveal'); const bar=e.target.querySelector('.bar'); if(bar){ const w = bar.style.width; bar.style.width = '0'; requestAnimationFrame(()=> bar.style.width = w); } io.unobserve(e.target); } }
     },{ threshold:.12 });
     document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
     document.querySelectorAll('.t-item').forEach(el=> io.observe(el));
 
-    // ======= Projects =======
+    // ===== Projects =====
     const projects = [
-      {
-        title:'Tourist Map Application',
-        img:'images/Map.jpg',
-        desc:'Filterable map of Hamilton attractions with Google Maps API and custom markers.',
-        tags:['Google Maps','Filters','Web'],
-        cat:'web',
-        links:[{label:'Case Study', href:'#'},{label:'Live', href:'#'}]
-      },
-      {
-        title:'Portfolio Website',
-        img:'images/Website.png',
-        desc:'Modern responsive portfolio built with semantic HTML, CSS, and vanilla JS.',
-        tags:['Accessibility','SEO','Vanilla JS'],
-        cat:'web',
-        links:[{label:'Live', href:'#'}]
-      },
-      {
-        title:'Dice Roller Game',
-        img:'images/Dice.png',
-        desc:'Lightweight dice game with game state, keyboard controls, and animations.',
-        tags:['Game loop','State'],
-        cat:'game',
-        links:[{label:'Source', href:'#'}]
-      },
-      {
-        title:'Power BI Dashboards (MTO)',
-        img:'images/powerbi.jpg',
-        desc:'Executive-ready visuals for KPIs; automated refresh & data quality checks.',
-        tags:['Power BI','Data','Governance'],
-        cat:'data',
-        links:[{label:'Overview', href:'#'}]
-      }
+      { title:'Tourist Map Application', img:'images/Map.jpg', desc:'Filterable map of Hamilton attractions with Google Maps API and custom markers.', tags:['Google Maps','Filters','Web'], cat:'web', links:[{label:'Case Study', href:'#'},{label:'Live', href:'#'}] },
+      { title:'Portfolio Website', img:'images/Website.png', desc:'Modern responsive portfolio built with semantic HTML, CSS, and vanilla JS.', tags:['Accessibility','SEO','Vanilla JS'], cat:'web', links:[{label:'Live', href:'#'}] },
+      { title:'Dice Roller Game', img:'images/Dice.png', desc:'Lightweight dice game with game state, keyboard controls, and animations.', tags:['Game loop','State'], cat:'game', links:[{label:'Source', href:'#'}] },
+      { title:'Power BI Dashboards (MTO)', img:'images/powerbi.jpg', desc:'Executive-ready visuals for KPIs; automated refresh & data quality checks.', tags:['Power BI','Data','Governance'], cat:'data', links:[{label:'Overview', href:'#'}] }
     ];
     const projectGrid = document.getElementById('projectGrid');
-    function renderProjects(cat='all'){
-      projectGrid.innerHTML='';
-      projects.filter(p=> cat==='all' || p.cat===cat).forEach(p=>{
-        const card = document.createElement('article');
-        card.className='project reveal';
-        card.innerHTML = `
-          <img src="${p.img}" alt="${p.title}" loading="lazy"/>
+    function cardHTML(p){
+      return `
+        <article class="project reveal">
+          <img src="${p.img}" alt="${p.title}" loading="lazy" width="640" height="360"/>
           <div class="p-body">
             <h3 style="margin:0">${p.title}</h3>
             <p class="muted">${p.desc}</p>
             <div class="p-tags">${p.tags.map(t=>`<span class='tag'>${t}</span>`).join('')}</div>
           </div>
-          <div class="p-actions">${p.links.map(l=>`<a class='btn sm' href='${l.href}' target='_blank' rel='noopener'>${l.label}</a>`).join('')}</div>`;
-        projectGrid.appendChild(card);
-        io.observe(card);
-      });
+          <div class="p-actions">${p.links.map(l=>`<a class='btn sm' href='${l.href}' target='_blank' rel='noopener'>${l.label}</a>`).join('')}</div>
+        </article>`;
+    }
+    function renderProjects(cat='all'){
+      projectGrid.innerHTML='';
+      for(const p of projects.filter(p=> cat==='all' || p.cat===cat)){
+        projectGrid.insertAdjacentHTML('beforeend', cardHTML(p));
+      }
+      document.querySelectorAll('.project').forEach(el=> io.observe(el));
     }
     renderProjects();
-
     document.querySelectorAll('.pill').forEach(btn=>{
       btn.addEventListener('click',()=>{
         document.querySelectorAll('.pill').forEach(b=>b.classList.remove('active'));
@@ -377,48 +410,81 @@
       })
     })
 
-    // ======= Contact form -> email compose =======
-    document.getElementById('contactForm').addEventListener('submit', (e)=>{
+    // ===== GitHub spotlight (with simple cache) =====
+    async function loadRepos(){
+      const wrap = document.getElementById('ghGrid');
+      try{
+        const cacheKey = 'gh_repos_cache_v1';
+        const cached = sessionStorage.getItem(cacheKey);
+        let data;
+        if(cached){ data = JSON.parse(cached); }
+        else {
+          const res = await fetch('https://api.github.com/users/harshiddsinh/repos?per_page=100', { headers:{'Accept':'application/vnd.github+json'} });
+          if(!res.ok) throw new Error('GitHub API rate limited');
+          data = await res.json();
+          sessionStorage.setItem(cacheKey, JSON.stringify(data));
+        }
+        const top = (Array.isArray(data)?data:[])
+          .filter(r=>!r.fork)
+          .sort((a,b)=> (b.stargazers_count||0)-(a.stargazers_count||0))
+          .slice(0,6);
+        if(!top.length){ wrap.innerHTML = '<p class="muted">No public repos found. Add featured repos on GitHub for best results.</p>'; return; }
+        for(const r of top){
+          const el = document.createElement('div');
+          el.className = 'repo reveal';
+          el.innerHTML = `<h4>${r.name}</h4>
+            <div class="meta">★ ${r.stargazers_count} • Updated ${new Date(r.updated_at).toLocaleDateString()}</div>
+            <p>${r.description||'No description provided.'}</p>
+            <div style="display:flex; gap:10px; margin-top:8px">
+              <a class="btn sm" href="${r.html_url}" target="_blank" rel="noopener">Source</a>
+              ${r.homepage?`<a class="btn ghost sm" href="${r.homepage}" target="_blank" rel="noopener">Live</a>`:''}
+            </div>`;
+          wrap.appendChild(el); io.observe(el);
+        }
+      }catch(e){
+        wrap.innerHTML = '<p class="muted">GitHub API is unavailable right now. Try again later.</p>';
+      }
+    }
+    loadRepos();
+
+    // ===== Contact form -> mailto compose + client validation =====
+    const form = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMsg');
+    form.addEventListener('submit', (e)=>{
       e.preventDefault();
-      const fd = new FormData(e.currentTarget);
-      const name = encodeURIComponent(fd.get('name'));
-      const email = encodeURIComponent(fd.get('email'));
-      const msg = encodeURIComponent(fd.get('message'));
-      const subject = `Collaboration inquiry from ${name}`;
-      const body = `Hi Harshiddsinh,%0D%0A%0D%0A${msg}%0D%0A%0D%0A– ${name} (${email})`;
+      const fd = new FormData(form);
+      const name = (fd.get('name')||'').toString().trim();
+      const email = (fd.get('email')||'').toString().trim();
+      const msg = (fd.get('message')||'').toString().trim();
+      if(!name || !email || !msg){ formMsg.textContent = 'Please complete all fields.'; return; }
+      const subject = encodeURIComponent(`Collaboration inquiry from ${name}`);
+      const body = encodeURIComponent(`Hi Harshiddsinh,\n\n${msg}\n\n– ${name} (${email})`);
       window.location.href = `mailto:harshiddsinh123@gmail.com?subject=${subject}&body=${body}`;
+      formMsg.textContent = 'Opening your email app…';
     });
 
-    // ======= Scroll spy (highlight nav) =======
+    // ===== Scroll spy =====
     const links = Array.from(document.querySelectorAll('.nav a.link'));
     const ids = links.map(a=> document.querySelector(a.getAttribute('href')));
     const spy = new IntersectionObserver((entries)=>{
-      entries.forEach(en=>{
-        if(en.isIntersecting){
-          links.forEach(l=> l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id));
-        }
-      })
+      for(const en of entries){ if(en.isIntersecting){ links.forEach(l=> l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id)); } }
     },{ rootMargin:'-50% 0px -40% 0px', threshold:0 });
     ids.forEach(section=> section && spy.observe(section));
 
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 
-  <!-- JSON-LD: Person -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Harshiddsinh Vaghela",
-    "jobTitle": "Software Developer & Business Analyst",
-    "email": "mailto:harshiddsinh123@gmail.com",
-    "url": "https://example.com/",
-    "sameAs": [
-      "https://www.linkedin.com/in/harshiddsinh-vaghela-339480257/",
-      "https://github.com/harshiddsinh"
-    ]
-  }
+    // ===== PWA: Inline Service Worker (optional) =====
+    // This registers a minimal SW from a Blob so you don't need an external file for quick hosting.
+    // Replace with a proper sw.js + manifest.json for production if you prefer.
+    if('serviceWorker' in navigator){
+      const swCode = `self.addEventListener('install', e=>{ self.skipWaiting(); e.waitUntil(caches.open('hv-portfolio-v1').then(c=>c.addAll(['./','index.html','images/harshiddsinh.jpeg']))); });
+self.addEventListener('activate', e=>{ e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!=='hv-portfolio-v1').map(k=>caches.delete(k))))); });
+self.addEventListener('fetch', e=>{ const u = new URL(e.request.url); if(e.request.method==='GET' && (u.origin===location.origin)){ e.respondWith(caches.match(e.request).then(r=> r || fetch(e.request).then(resp=>{ const copy = resp.clone(); caches.open('hv-portfolio-v1').then(c=>c.put(e.request, copy)); return resp; }))); } });`;
+      const blob = new Blob([swCode], {type:'text/javascript'});
+      const swUrl = URL.createObjectURL(blob);
+      navigator.serviceWorker.register(swUrl).catch(()=>{});
+    }
   </script>
 </body>
 </html>
