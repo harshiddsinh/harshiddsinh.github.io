@@ -373,12 +373,45 @@
     document.querySelectorAll('.t-item').forEach(el=> io.observe(el));
 
     // ===== Projects =====
-    const projects = [
-      { title:'Tourist Map Application', img:'images/Map.jpg', desc:'Filterable map of Hamilton attractions with Google Maps API and custom markers.', tags:['Google Maps','Filters','Web'], cat:'web', links:[{label:'Case Study', href:'#'},{label:'Live', href:'#'}] },
-      { title:'Portfolio Website', img:'images/Website.png', desc:'Modern responsive portfolio built with semantic HTML, CSS, and vanilla JS.', tags:['Accessibility','SEO','Vanilla JS'], cat:'web', links:[{label:'Live', href:'#'}] },
-      { title:'Dice Roller Game', img:'images/Dice.png', desc:'Lightweight dice game with game state, keyboard controls, and animations.', tags:['Game loop','State'], cat:'game', links:[{label:'Source', href:'#'}] },
-      { title:'Power BI Dashboards (MTO)', img:'images/powerbi.jpg', desc:'Executive-ready visuals for KPIs; automated refresh & data quality checks.', tags:['Power BI','Data','Governance'], cat:'data', links:[{label:'Overview', href:'#'}] }
-    ];
+ const projects = [
+  { 
+    title: 'Tourist Map Application', 
+    img: 'images/Map.jpg', 
+    desc: 'Filterable map of Hamilton attractions with Google Maps API and custom markers.', 
+    tags: ['Google Maps', 'Filters', 'Web'], 
+    cat: 'web', 
+    links: [
+      { label: 'Case Study', href: '#' },
+      { label: 'Live', href: '#' },
+      { label: 'Video Demo', href: 'https://www.youtube.com/watch?v=fZr6dHzVbQw' } // 🎥 YouTube video link
+    ] 
+  },
+  { 
+    title: 'Portfolio Website', 
+    img: 'images/Website.png', 
+    desc: 'Modern responsive portfolio built with semantic HTML, CSS, and vanilla JS.', 
+    tags: ['Accessibility', 'SEO', 'Vanilla JS'], 
+    cat: 'web', 
+    links: [{ label: 'Live', href: '#' }] 
+  },
+  { 
+    title: 'Dice Roller Game', 
+    img: 'images/Dice.png', 
+    desc: 'Lightweight dice game with game state, keyboard controls, and animations.', 
+    tags: ['Game loop', 'State'], 
+    cat: 'game', 
+    links: [{ label: 'Source', href: '#' }] 
+  },
+  { 
+    title: 'Power BI Dashboards (MTO)', 
+    img: 'images/powerbi.jpg', 
+    desc: 'Executive-ready visuals for KPIs; automated refresh & data quality checks.', 
+    tags: ['Power BI', 'Data', 'Governance'], 
+    cat: 'data', 
+    links: [{ label: 'Overview', href: '#' }] 
+  }
+];
+
     const projectGrid = document.getElementById('projectGrid');
     function cardHTML(p){
       return `
@@ -486,6 +519,7 @@ self.addEventListener('fetch', e=>{ const u = new URL(e.request.url); if(e.reque
   </script>
 </body>
 </html>
+
 
 
 
