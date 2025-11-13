@@ -252,7 +252,7 @@
       <button class="pill active" data-filter="all" role="tab" aria-selected="true">All</button>
       <button class="pill" data-filter="web" role="tab">Web</button>
       <button class="pill" data-filter="data" role="tab">Data</button>
-      <button class="pill" data-filter="game" role="tab">Game</button>
+      
     </div>
     <div class="grid" id="projectGrid" aria-live="polite"></div>
   </section>
@@ -381,8 +381,7 @@ const projects = [
     tags: ['Google Maps', 'Filters', 'Web'], 
     cat: 'web', 
     links: [
-      { label: 'Case Study', href: '#' },
-      { label: 'Live', href: '#' },
+      
       { label: 'Video Demo', href: 'https://www.youtube.com/watch?v=fZr6dHzVbQw' }
     ]
   },
@@ -416,16 +415,7 @@ const projects = [
       { label: 'Video Demo', href: 'https://youtu.be/7N6A2t-0eSI' }
     ]
   },
-  { 
-    title: 'Dice Roller Game', 
-    img: 'images/Dice.png', 
-    desc: 'Lightweight dice game with game state, keyboard controls, and animations.', 
-    tags: ['Game loop','State'], 
-    cat: 'game', 
-    links: [
-      { label: 'Source', href: '#' }
-    ]
-  },
+  
   { 
     title: 'Power BI Dashboards (MTO)', 
     img: 'images/powerbi.jpg', 
@@ -511,6 +501,7 @@ self.addEventListener('fetch', e=>{ const u = new URL(e.request.url); if(e.reque
   </script>
 </body>
 </html>
+
 
 
 
