@@ -373,7 +373,7 @@
     document.querySelectorAll('.t-item').forEach(el=> io.observe(el));
 
     // ===== Projects =====
- const projects = [
+const projects = [
   { 
     title: 'Tourist Map Application', 
     img: 'images/Map.jpg', 
@@ -381,29 +381,32 @@
     tags: ['Google Maps', 'Filters', 'Web'], 
     cat: 'web', 
     links: [
-      
-      { label: 'Video Demo', href: 'https://www.youtube.com/watch?v=fZr6dHzVbQw' } // 🎥 YouTube video link
-    ] 
+      { label: 'Case Study', href: '#' },
+      { label: 'Live', href: '#' },
+      { label: 'Video Demo', href: 'https://www.youtube.com/watch?v=fZr6dHzVbQw' }
+    ]
   },
-
-   { 
-    title: 'React Movie Finder', 
-    img: 'images/react-movie-app.jpg', 
-    desc: 'A movie search app built with React.js that uses a free movie API to fetch and display film details dynamically.', 
-    tags: ['React.js', 'API Integration', 'Web App'], 
-    cat: 'web', 
-    link: 'https://youtu.be/kjz3MgnnLW8'
-  },
-   
   { 
     title: 'Portfolio Website', 
     img: 'images/Website.png', 
-    desc: 'Modern responsive portfolio built with semantic HTML, CSS, and vanilla JS.', 
-    tags: ['Accessibility', 'SEO', 'Vanilla JS'], 
+    desc: 'Modern responsive portfolio built with semantic HTML, CSS and vanilla JS.', 
+    tags: ['Accessibility','SEO','Vanilla JS'], 
     cat: 'web', 
-    links: [{ label: 'Live', href: '#' }] 
+    links: [
+      { label: 'Live', href: '#' }
+    ]
   },
-{ 
+  { 
+    title: 'React Movie Finder', 
+    img: 'images/react-movie-app.jpg', 
+    desc: 'A movie search app built with React.js that uses a free movie API to fetch and display film details dynamically.', 
+    tags: ['React.js','API Integration','Web'], 
+    cat: 'web', 
+    links: [
+      { label: 'Video Demo', href: 'https://youtu.be/kjz3MgnnLW8' }
+    ]
+  },
+  { 
     title: 'Node Backend Service', 
     img: 'images/node-backend.jpg', 
     desc: 'Backend service built with Node.js that handles API requests, business logic, and persistent storage.', 
@@ -413,24 +416,28 @@
       { label: 'Video Demo', href: 'https://youtu.be/7N6A2t-0eSI' }
     ]
   },
-   
   { 
     title: 'Dice Roller Game', 
     img: 'images/Dice.png', 
     desc: 'Lightweight dice game with game state, keyboard controls, and animations.', 
-    tags: ['Game loop', 'State'], 
+    tags: ['Game loop','State'], 
     cat: 'game', 
-    links: [{ label: 'Source', href: '#' }] 
+    links: [
+      { label: 'Source', href: '#' }
+    ]
   },
   { 
     title: 'Power BI Dashboards (MTO)', 
     img: 'images/powerbi.jpg', 
     desc: 'Executive-ready visuals for KPIs; automated refresh & data quality checks.', 
-    tags: ['Power BI', 'Data', 'Governance'], 
+    tags: ['Power BI','Data','Governance'], 
     cat: 'data', 
-    links: [{ label: 'Overview', href: '#' }] 
+    links: [
+      { label: 'Overview', href: '#' }
+    ]
   }
 ];
+
 
     const projectGrid = document.getElementById('projectGrid');
     function cardHTML(p){
@@ -504,6 +511,7 @@ self.addEventListener('fetch', e=>{ const u = new URL(e.request.url); if(e.reque
   </script>
 </body>
 </html>
+
 
 
 
