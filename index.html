@@ -37,7 +37,7 @@
       --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.35); --shadow-sm:0 6px 18px rgba(0,0,0,.28); --maxw:1180px;
       --focus: 0 0 0 3px color-mix(in oklab, var(--primary), transparent 40%);
     }
-    @media (prefers-color-scheme: light){ :root{ --bg:#f6f8fc; --panel:#ffffff; --text:#081223; --muted:#52607b; } }
+    @media (prefers-color-scheme: dark){ :root{ --bg:#f6f8fc; --panel:#ffffff; --text:#081223; --muted:#52607b; } }
     *{box-sizing:border-box}
     html:focus-within { scroll-behavior: smooth; }
     html,body{height:100%}
@@ -496,6 +496,7 @@ self.addEventListener('fetch', e=>{ const u = new URL(e.request.url); if(e.reque
   </script>
 </body>
 </html>
+
 
 
 
